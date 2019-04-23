@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--<bean id="helloMan" class="com.geekbrains.spring.HelloManOnceSay">-->
+
+    <!--<property name="name" value="Yuri" />-->
+    <!--</bean>-->
+
+    <!--<bean id="cppCodeCreator" class="com.geekbrains.spring.CppCodeCreator">-->
+    <!--<constructor-arg ref="animalsClassNameGenerator" />-->
+    <!--</bean>-->
+    <!--<context:component-scan base-package="lesson" />-->
+
+    <bean id="colorCameraRoll" class="lesson.Spring.ColorCameraRoll"></bean>
+    <bean id="cameraC" class="lesson.Spring.Camera">
+        <property name="colorCameraRoll">
+            <ref bean="colorCameraRoll"/>
+        </property>
+    </bean>
+
+    <bean id="bWCameraRoll" class="lesson.Spring.BlackAndWhiteCameraRoll"></bean>
+    <bean id="cameraBW" class="lesson.Spring.Camera">
+        <property name="bWCameraRoll">
+            <ref bean="bWCameraRoll"/>
+        </property>
+    </bean>
+
+</beans>
